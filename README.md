@@ -31,4 +31,54 @@ Cookies/Http Only
 - 웹클라이언트라 모바일을 못사용
 - Scsceptible to CSRF attack
 
-script가 내 PC에 있는 보안
+https://bughunters.google.com/learn
+
+
+1. 사용자가 받아오는 스크립트에 따로 입력을 못하도록 막아준다
+2. HTTP Only - 적용
+
+Node cooki 
+
+npm i cookie-parser
+
+app.use(cookiePaser)
+
+const corsOption → credentials : true // allow the Access-Control-Allow-Credentials
+
+// cooke header → 브라우저에만 사용되는 것 
+
+signup, login
+
+```jsx
+setToken(res,token)
+function setToken(res,token){
+	const option = {
+		maxAge:config.jwt.exppiresInSec * 1000,
+		httpOnly:true,
+		sameSite:'none'
+		secure:true,
+
+	}
+	res.cooke('token',token,)//HTTP-ONLY
+}
+```
+
+middleware
+
+```jsx
+// 1. Cooke(for Browser)
+// 2. header(for Non-Browder Client)
+
+let token;
+//check ther header first
+const authHeader = req.get('Ahthorization');
+if(authHeader && authHeader.startsWith('Bearer')){
+	token = ahthHeader.split(' ')[1];
+}
+// if no token in the header, check the cookie
+if(!token){
+	token = req.cookies['token'];
+}
+if(!token){
+return res.status(401).json(AUTH_ERROR);
+```
