@@ -6,7 +6,7 @@
 
 Improved&Advanced
 
-![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/92f31a8c-c7e1-4e07-bac5-c206b83e34a9/Untitled.png)
+![Untitled](./%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7%202022-06-06%20%EC%98%A4%ED%9B%84%2012.59.32.png)
 
 XSS Attack
 
